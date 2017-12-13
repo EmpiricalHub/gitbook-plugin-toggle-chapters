@@ -13,6 +13,7 @@ require(["gitbook", "jQuery"], function(gitbook, $) {
 
   gitbook.events.bind("page.change", function() {
     $('li.chapter').has('ul.articles').addClass('haschild');
+    $('li.chapter').has('li.chapter.active').addClass('activechild');
     $('li.chapter').children('ul.articles').hide();
     $chapter = $('li.chapter.active');
     $children = $chapter.children('ul.articles');
